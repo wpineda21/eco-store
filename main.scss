@@ -1,0 +1,173 @@
+$primary-color:#FFEFE7;
+$secundary-color:#FFDAC6;
+$tertiary-color:#BABD8D;
+$primary-text-color:#7C6A0A;
+$font-stackl: 'IBM Plex Sans' , sans-serif; 
+$quatenion-color: #FA9500;
+$paragraph-size: 1.5em;
+
+@mixin flexCenter($direction,$content,$align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
+}
+
+@mixin buttonstyle{
+    button{
+        background-color: none;
+        border-style: none;
+
+    }
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $primary-color;
+    font-family: $font-stackl;
+}
+
+.navbar{
+    background-color: $primary-color;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    color: $primary-text-color;
+
+    @include flexCenter(row,space-between ,center );
+
+    padding: 10px;
+    p{
+        font-size: 1.5rem;
+        padding-left: 30px;
+    }
+    .icons{
+        display: flex;
+        gap: 15px;
+        @include buttonstyle();
+    }
+}
+
+article{
+    color: $primary-text-color;
+    width: auto;
+    padding-left: 45px;
+    padding-right: 45px;
+    display: flex;
+    justify-content: space-between;
+
+    .impact-section{
+        display: flex;
+        padding-top: 50px;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    h1{
+        font-size: 3em;
+        padding: 0px;
+        margin: 0px;
+    }
+    p{
+        font-size: $paragraph-size;
+        padding-left: 3px;
+    }
+
+    button{
+        width: 12vw;
+        background-color: $quatenion-color ; 
+        border-radius: 35px;
+        color: white;
+        font-size: 1em;
+
+        padding: 20px;
+        border-style: none;
+        
+    }
+    .info-image{
+        img{
+            width: 25vw;
+            border-radius: 19px;
+        }
+    }
+}
+
+main{
+    background-color: $primary-color;
+}
+
+section{
+    width: 100%;
+    width: auto;
+    padding: 60px;
+    h2{
+        color: $primary-text-color;
+        font-size: 2em;
+    }
+    .health-care{
+
+        h2{
+            font-weight: 300;
+            padding-bottom: 60px;
+        }
+        .card-section{
+            display: flex;
+            width: auto;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 200px;
+            row-gap: 80px; 
+        }
+        .product-card{
+            .icon{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                padding-bottom: 12px;
+                svg{
+                    width: 28px;
+                    height: 36px;
+                    stroke: #FA9500;
+                }
+            }
+            width: 12vw;
+            height: 45vh;
+            background-color: $secundary-color;
+            color: $primary-text-color;
+            padding: 20px;
+            border-radius: 8px;
+            .product-img{
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                img{
+                    width: 12vw;
+                    height: 20vh;
+                    object-fit: cover;
+                    border-radius: 6px;
+                }
+            }
+         }  
+    }
+    .furniture{
+        @extend .health-care;
+
+        .product-card{
+            background-color: $tertiary-color;
+            color: wheat;
+        }
+    }
+}
+
+.footer{
+    $background-color:#FA9500;
+    background-color: $background-color;
+    width: 100%;
+    height: 250px;
+}
